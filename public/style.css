@@ -1,0 +1,271 @@
+/* General Styling */
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background: #f5f6fa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: black;
+}
+
+/* Pages */
+.page {
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+/* Headings */
+h2 {
+  margin-bottom: 20px;
+  color: #2f3640;
+  font-size: 22px;
+}
+
+/* Forms */
+input,
+select {
+  width: 90%;
+  margin: 8px 0;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  font-size: 15px;
+  outline: none;
+}
+
+button {
+  background: #333;
+  color: white;
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-weight: 600;
+}
+
+button:hover {
+  background: #222;
+}
+
+#dashboard-page {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2f3640;
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.task-actions input[type="text"],
+.task-actions select {
+  flex: 1;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid #dcdde1;
+  outline: none;
+  font-size: 16px;
+}
+
+.task-actions button#add-task {
+  padding: 10px 20px;
+  background: #333;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.task-actions button#add-task:hover {
+  background: #222;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #dcdde1;
+  position: relative;
+}
+
+.tabs button {
+  flex: 1;
+  color: black;
+  padding: 10px 0;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  position: relative;
+  transition: all 0.3s;
+  font-size: 16px;
+}
+
+.tabs button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 3px;
+  background-color: #333;
+  transition: 0.3s;
+  transform: translateX(-50%);
+}
+
+.tabs button.active::after {
+  width: 100%;
+}
+
+.task-container {
+  position: relative;
+  min-height: 120px;
+}
+
+.task-container ul,
+.task-container ul li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.task-list {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s;
+  pointer-events: none;
+}
+
+ul.task-list.active {
+  opacity: 1;
+  transform: translateY(0);
+  position: relative;
+  pointer-events: auto;
+}
+
+/* Task items */
+ul.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+ul.task-list li.completed {
+  background-color: #dff9fb;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+ul.task-list li.uncompleted {
+  background-color: papayawhip;
+}
+
+.task-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+ul.task-list li button {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 14px;
+  color: #fff;
+}
+
+button.edit-task {
+  background: #40739e;
+}
+
+button.edit-task:hover {
+  background: #273c75;
+}
+
+button.delete-task {
+  background: #e84118;
+}
+
+button.delete-task:hover {
+  background: #c23616;
+}
+
+ul.task-list li:hover {
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  padding: 10px;
+  width: 100%;
+}
+
+.form-control {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+
+.form-control input {
+  flex: 1;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid #dcdde1;
+  outline: none;
+  font-size: 16px;
+}
+
+.form-control button {
+  background: #333;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-control button:hover {
+  background: #222;
+}
