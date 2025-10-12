@@ -32,9 +32,6 @@ app.use(cors());
 app.use(xss());
 
 // routes
-app.get('/', (req, res) => {
-  res.send('hello world');
-});
 
 app.use('/api/v1/auth', AuthRouter);
 app.use('/api/v1/tasks', authenticationUser, TaskRouter);
