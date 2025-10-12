@@ -53,7 +53,6 @@ const updateTask = async (req, res) => {
   // console.log('userId from token:', userID);
 
   const taskCheck = await Task.findById(taskId);
-  console.log('createdBy in DB:', taskCheck?.createdBy);
 
 
   const task = await Task.findOneAndUpdate(
