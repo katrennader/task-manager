@@ -1,5 +1,7 @@
 // -------------------- CONFIG --------------------
-const API_URL = "https://task-manager-ashy-five-53.vercel.app/api/v1"; // << Change this to your backend base URL
+
+const API_URL = "http://localhost:3000/api/v1"; // << Change this to your backend base URL
+console.log("API_URL:", API_URL);
 let token = null; // store auth token after login
 let tasks = [];
 let currentEditId = null; // store ID of task to edit

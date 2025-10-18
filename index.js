@@ -40,10 +40,24 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
-// ✅ connect to DB once (without app.listen)
-connectDB(process.env.MONGO_URL)
-  .then(() => console.log('✅ MongoDB Connected Successfully'))
-  .catch((err) => console.error('❌ Database Connection Error:', err));
+// // ✅ connect to DB once (without app.listen)
+// connectDB(process.env.MONGO_URL)
+//   .then(() => console.log('✅ MongoDB Connected Successfully'))
+//   .catch((err) => console.error('❌ Database Connection Error:', err));
 
-// ✅ export the app for Vercel
-module.exports = app;
+// // ✅ export the app for Vercel
+// module.exports = app;
+
+const start = async () => {
+  try {
+    await connectDB(process.env.MONGO_URL);
+    console.log('✅ MongoDB Connected Successfully');
+    app.listen(process.env.PORT, () => {
+      console.log(`✅ Server is listening on port ${process.env.PORT}...`);
+    });
+  } catch (err) {
+    console.error('❌ Database Connection Error:', err);
+  }
+};
+
+start();
