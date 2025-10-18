@@ -1,6 +1,6 @@
 // -------------------- CONFIG --------------------
 
-const API_URL = "http://localhost:3000/api/v1"; // << Change this to your backend base URL
+const API_URL = "https://task-manager-2snb.vercel.app/api/v1"; // << Change this to your backend base URL
 console.log("API_URL:", API_URL);
 let token = null; // store auth token after login
 let tasks = [];
