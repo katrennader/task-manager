@@ -1,5 +1,5 @@
 // -------------------- CONFIG --------------------
-const API_URL = "http://localhost:5000/api/v1"; // << Change this to your backend base URL
+const API_URL = "https://task-manager-mu-sand.vercel.app/api/v1~"; // << Change this to your backend base URL
 let token = null; // store auth token after login
 let tasks = [];
 let currentEditId = null; // store ID of task to edit
